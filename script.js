@@ -21,8 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 response = "</br>Hello! My name's AMANSAG Hasnae, a cybersecurity & embedded telecommunications systems engineering student at the National School of Applied Sciences of Marrakech. I'm deeply passionate about this career path, particularly fascinated by cryptography at the moment. I'm eager to contribute to securing digital infrastructures and exploring innovative solutions in this dynamic field. </br>";
                 break;
             case 'contact':
-                response = "</br>My contact information: </br></br> Email : amansag.hasnae@gmail.com  </br> Linkedin : www.linkedin.com/in/hasnae-amansag-b7ba81214  </br> GitHub  : https://github.com/hsinaa </br> TryHackMe : https://tryhackme.com/p/hsina  </br>  RootMe : https://www.root-me.org/hsina?lang=fr#19caccc7be256309e3111d5ab530efe9              </br>  ";
-                break;
+                response = "</br>My contact information: </br></br> \
+Email : <a href='mailto:amansag.hasnae@gmail.com'>amansag.hasnae@gmail.com</a></br> \
+LinkedIn : <a href='https://www.linkedin.com/in/hasnae-amansag-b7ba81214' target='_blank'>www.linkedin.com/in/hasnae-amansag-b7ba81214</a></br> \
+GitHub : <a href='https://github.com/hsinaa' target='_blank'>https://github.com/hsinaa</a></br> \
+TryHackMe : <a href='https://tryhackme.com/p/hsina' target='_blank'>https://tryhackme.com/p/hsina</a></br> \
+RootMe : <a href='https://www.root-me.org/hsina?lang=fr#19caccc7be256309e3111d5ab530efe9' target='_blank'>https://www.root-me.org/hsina?lang=fr#19caccc7be256309e3111d5ab530efe9</a></br>";
+
             case 'resume':
                 window.open('resume.pdf', '_blank');
                 response = "</br>Opening resume... </br>";
