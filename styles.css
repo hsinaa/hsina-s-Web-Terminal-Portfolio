@@ -1,0 +1,47 @@
+body {
+    background-color: #131212;
+    color: #fff;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 17px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#firstmsg {
+    text-align: center;
+    margin-top: 0; /* Remove default margin for paragraph */
+}
+
+.terminal-container {
+    margin-bottom: 15px; /* Space between terminal and footer */
+}
+
+.terminal-box {
+    background-color: #131212;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #a34470;
+    width: 800px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+#user-input {
+    outline: none;
+    border: none;
+    color: #cf86a8;
+    white-space: pre;
+}
+
+.terminal-footer {
+    text-align: center; /* Center the text horizontally */
+}
