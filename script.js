@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 response = "</br>Available commands: </br> - about: provides brief introduction about me </br> - contact: shows how you can contact me </br> - resume: opens my resume in a new tab </br> - clear: clears the terminal </br>";
                 break;
             case 'about':
-                response = "</br>Hello! My name's AMANSAG Hasnae, a cybersecurity & embedded telecommunications systems engineering student at the National School of Applied Sciences of Marrakech. I'm deeply passionate about this career path, particularly fascinated by cryptography at the moment. I'm eager to contribute to securing digital infrastructures and exploring innovative solutions in this dynamic field. </br>";
+                response = "</br>Hello! My name's AMANSAG Hasnae, a cybersecurity & embedded telecommunications systems engineering student at the National School of Applied Sciences of Marrakech. I'm deeply passionate about my career path, and I'm particularly fascinated by cryptography, forensics, and data analysis at the moment.. I'm eager to contribute to securing digital infrastructures and exploring innovative solutions in this dynamic field. </br>";
                 break;
             case 'contact':
                 response = "</br>My contact information: </br></br> \
