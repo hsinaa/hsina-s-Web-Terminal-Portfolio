@@ -1,100 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const userInput = document.getElementById('user-input');
-    const output = document.getElementById('output');
-
-    userInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            const command = userInput.innerText.trim();
-            handleCommand(command);
-            userInput.innerText = '';
-        }
-    });
-
-    function handleCommand(command) {
-        let response = '';
-        switch (command) {
-            case 'all':
-                response = "</br>Available commands: </br> - about: provides brief introduction about me </br> - experience: my professional experience </br> - projects: selected projects </br> - skills: technical skills </br> - education: my academic background </br> - certifications: certs & learning paths </br> - languages: languages I speak </br> - extracurricular: clubs & activities </br> - contact: shows how you can contact me </br> - resume: opens my resume in a new tab </br> - clear: clears the terminal </br>";
-                break;
-            case 'about':
-                response = "</br>Hello! My name's AMANSAG Hasnae, a DevSecOps and Cloud engineer with a cybersecurity background. I'm passionate about cloud security, DevSecOps, and SIEM/threat detection, and I've built projects ranging from a self-healing honeypot on AWS to an AI-enhanced Wazuh SIEM platform with real-time UEBA. I'm currently looking for my first full-time role in cybersecurity/cloud engineering. </br>";
-                break;
-            case 'experience':
-                response = "</br>Experience: </br></br> \
-[Mar - Aug 2026] Cybersecurity Intern @ Atlas Cloud Services</br> \
-&nbsp;&nbsp;Design and Implementation of a Wazuh SIEM for Log Centralization and Analysis: deployed an AI-enhanced Wazuh SIEM to centralize EXGARDE physical access control logs, built a real-time UEBA engine (Isolation Forest) for behavioral anomaly detection, and implemented SQL Server high availability with automated dashboards & email alerting.</br></br> \
-[Jul - Aug 2025] Cybersecurity Intern @ Atlas Cloud Services</br> \
-&nbsp;&nbsp;Implementation of a Data Loss Prevention (DLP) solution: containerized OpenDLP and integrated AI-based data classification for sensitive data detection.</br>";
-                break;
-            case 'projects':
-                response = "</br>Projects (type 'resume' for the full CV): </br></br> \
-- Cloud-Native Microservices Platform for Sporting Events - Kubernetes, Helm, ArgoCD, Jenkins DevSecOps pipeline</br> \
-- Automation Platform for a Secure Kubernetes Infrastructure - Terraform, Ansible, Helm, ArgoCD, Falco</br> \
-- Cloud-Native SIEM Pipeline with Threat Intel on AWS - GuardDuty, EventBridge, Lambda, TheHive, Cortex, MISP</br> \
-- VMware ESXi 7.0 & vCenter Deployment</br> \
-- Automated AWS Application Deployment - Packer, Ansible, Terraform</br> \
-- Self-Healing Honeypot on AWS - Cowrie, boto3, Auto Scaling</br> \
-- Private Cloud with OpenStack - IaaS platform on Ubuntu/DevStack (Nova, Neutron, Glance)</br> \
-- SecureOps Lab - personal home lab for AD administration, exploitation & SIEM practice</br> \
-- HardenedHost - Linux OS hardening scripts following ANSSI best practices</br>";
-                break;
-            case 'skills':
-                response = "</br>Skills: </br></br> \
-Cloud & Virtualization: AWS, OpenStack, VMware ESXi/vCenter, Proxmox</br> \
-Containers & Orchestration: Docker/Docker Compose, Kubernetes, Helm</br> \
-IaC & CaC: Terraform, Ansible, Packer</br> \
-DevOps & GitOps: Jenkins, ArgoCD, Git, SonarQube, Trivy, OWASP DC, GitLeaks, Falco</br> \
-Observability: Prometheus, Grafana, Loki, Kibana/ElasticSearch</br> \
-SIEM / Threat Intel: Wazuh, Splunk, TheHive, Cortex, MISP</br> \
-Scripting & Programming: Python (boto3), Bash, Java JEE</br> \
-Systems & Network Administration: Linux, Windows, Active Directory, Networking</br> \
-Compliance & Governance: PCA/PRA, ISO 27001, EBIOS RM</br>";
-                break;
-            case 'education':
-                response = "</br>Education: </br></br> \
-National School of Applied Sciences, Marrakech (ENSA) - 2021-2026</br> \
-Cyber Defense & Embedded Telecommunications Systems Engineering</br></br> \
-Groupe Scolaire la Résidence - 2018-2021</br> \
-Baccalaureate, Mathematical Sciences</br>";
-                break;
-            case 'certifications':
-                response = "</br>Certifications: </br></br> \
-- (ISC)² Certified in Cybersecurity (CC) - Candidate</br> \
-- TryHackMe SOC Level 1 Learning Path</br> \
-- Nutanix Hybrid Cloud Fundamentals - Certified</br>";
-                break;
-            case 'languages':
-                response = "</br>Languages: </br></br> \
-English : Advanced</br> \
-French : Advanced</br> \
-Standard Arabic : Advanced</br>";
-                break;
-            case 'extracurricular':
-                response = "</br>Extracurricular Activities: </br></br> \
-- JLM - Jeunes Leaders Marocains : Member, Projects, Social Actions & Design unit</br> \
-- SelfDev : Member, Communication & Design unit</br> \
-- GCDSTE Secure Tech, ENSA Marrakech : Head of the Communication unit, Member of the Training unit</br>";
-                break;
-            case 'contact':
-                response = "</br>My contact information: </br></br> \
-Phone : +212 (0) 694 234 813</br> \
-Email : <a href='mailto:amansag.hasnae@gmail.com'>amansag.hasnae@gmail.com</a></br> \
-LinkedIn : <a href='https://www.linkedin.com/in/hasnae-amansag-b7ba81214' target='_blank'>www.linkedin.com/in/hasnae-amansag-b7ba81214</a></br> \
-GitHub : <a href='https://github.com/hsinaa' target='_blank'>https://github.com/hsinaa</a></br> \
-TryHackMe : <a href='https://tryhackme.com/p/hsina' target='_blank'>https://tryhackme.com/p/hsina</a></br> \
-RootMe : <a href='https://www.root-me.org/hsina?lang=fr#19caccc7be256309e3111d5ab530efe9' target='_blank'>https://www.root-me.org/hsina?lang=fr#19caccc7be256309e3111d5ab530efe9</a></br>";
-                break;
-            case 'resume':
-                window.open('resume.pdf', '_blank');
-                response = "</br>Opening resume... </br>";
-                break;
-            case 'clear':
-                output.innerHTML = '' + "</br>" ;
-                return;
-            default:
-                response = "</br>Invalid command</br>";
-        }
-        output.innerHTML += `&gt;root@hsina: ~$ ${command}<br>${response}<br>`;
-    }
+document.addEventListener("DOMContentLoaded",()=>{
+ const form=document.querySelector("#command-form"),input=document.querySelector("#user-input"),output=document.querySelector("#output"),body=document.querySelector("#terminal-body"),buttons=[...document.querySelectorAll("[data-command]")],history=[];let historyIndex=0;
+ const commands={
+  about:`<div class="response-title">Hello, I'm Hasnae <span class="muted">— cybersecurity engineer</span></div><p>I design secure cloud infrastructure, automate DevSecOps workflows, and build detection systems that turn noisy telemetry into useful signals. My recent work spans AI-enhanced Wazuh SIEM, UEBA, AWS threat detection, Kubernetes security and infrastructure as code.</p><div class="tag-list"><span class="tag">Cloud Security</span><span class="tag">DevSecOps</span><span class="tag">Threat Detection</span><span class="tag">SIEM / UEBA</span></div>`,
+  experience:`<div class="response-title">Professional experience</div><div class="item"><div class="item-label">Mar — Aug 2026</div><div><strong>Cybersecurity Intern · Atlas Cloud Services</strong>Designed an AI-enhanced Wazuh SIEM for EXGARDE access logs, a real-time Isolation Forest UEBA engine, SQL Server high availability, dashboards and automated alerting.</div></div><div class="item"><div class="item-label">Jul — Aug 2025</div><div><strong>Cybersecurity Intern · Atlas Cloud Services</strong>Containerized OpenDLP and integrated AI-based classification for sensitive-data discovery.</div></div>`,
+  projects:`<div class="response-title">Selected projects</div><div class="item"><div class="item-label">Platform engineering</div><div><strong>Cloud-native sporting events platform</strong>Kubernetes, Helm, ArgoCD and a Jenkins DevSecOps pipeline.</div></div><div class="item"><div class="item-label">Cloud security</div><div><strong>AWS threat-intelligence pipeline</strong>GuardDuty, EventBridge, Lambda, TheHive, Cortex and MISP.</div></div><div class="item"><div class="item-label">Detection engineering</div><div><strong>Self-healing honeypot</strong>Cowrie, boto3 and Auto Scaling on AWS.</div></div><div class="item"><div class="item-label">Infrastructure</div><div><strong>Secure Kubernetes automation</strong>Terraform, Ansible, Helm, ArgoCD and Falco.</div></div><p class="muted">Run “resume” to view the full project list.</p>`,
+  skills:`<div class="response-title">Technical toolkit</div><div class="item"><div class="item-label">Cloud & compute</div><div>AWS · OpenStack · VMware · Proxmox</div></div><div class="item"><div class="item-label">Platform</div><div>Docker · Kubernetes · Helm · ArgoCD · Jenkins</div></div><div class="item"><div class="item-label">Automation</div><div>Terraform · Ansible · Packer · Python · Bash</div></div><div class="item"><div class="item-label">Security</div><div>Wazuh · Splunk · TheHive · Cortex · MISP · Trivy · Falco</div></div><div class="item"><div class="item-label">Observability</div><div>Prometheus · Grafana · Loki · Elastic Stack</div></div>`,
+  education:`<div class="response-title">Academic background</div><div class="item"><div class="item-label">2021 — 2026</div><div><strong>National School of Applied Sciences, Marrakech</strong>Engineering degree · Cyber Defense & Embedded Telecommunications Systems</div></div><div class="item"><div class="item-label">2018 — 2021</div><div><strong>Groupe Scolaire la Résidence</strong>Baccalaureate · Mathematical Sciences</div></div>`,
+  certifications:`<div class="response-title">Certifications & learning</div><div class="item"><div class="item-label">ISC2</div><div>Certified in Cybersecurity (CC) · Candidate</div></div><div class="item"><div class="item-label">TryHackMe</div><div>SOC Level 1 learning path</div></div><div class="item"><div class="item-label">Nutanix</div><div>Hybrid Cloud Fundamentals · Certified</div></div>`,
+  languages:`<div class="response-title">Languages</div><div class="item"><div class="item-label">English</div><div>Advanced proficiency</div></div><div class="item"><div class="item-label">French</div><div>Advanced proficiency</div></div><div class="item"><div class="item-label">Arabic</div><div>Native / advanced proficiency</div></div>`,
+  extracurricular:`<div class="response-title">Community & leadership</div><div class="item"><div class="item-label">GCDSTE Secure Tech</div><div>Head of Communication · Training unit member</div></div><div class="item"><div class="item-label">JLM</div><div>Projects, social actions and design unit member</div></div><div class="item"><div class="item-label">SelfDev</div><div>Communication and design unit member</div></div>`,
+  contact:`<div class="response-title">Let's build something secure.</div><div class="item"><div class="item-label">Email</div><div><a href="mailto:amansag.hasnae@gmail.com">amansag.hasnae@gmail.com</a></div></div><div class="item"><div class="item-label">LinkedIn</div><div><a href="https://www.linkedin.com/in/hasnae-amansag-b7ba81214" target="_blank" rel="noreferrer">hasnae-amansag ↗</a></div></div><div class="item"><div class="item-label">GitHub</div><div><a href="https://github.com/hsinaa" target="_blank" rel="noreferrer">@hsinaa ↗</a></div></div><div class="item"><div class="item-label">Security labs</div><div><a href="https://tryhackme.com/p/hsina" target="_blank" rel="noreferrer">TryHackMe ↗</a> · <a href="https://www.root-me.org/hsina?lang=fr#19caccc7be256309e3111d5ab530efe9" target="_blank" rel="noreferrer">Root-Me ↗</a></div></div>`,
+  help:`<div class="response-title">Available commands</div><p>about · experience · projects · skills · education · certifications · languages · extracurricular · contact · resume · clear</p>`
+ };commands.all=commands.help;
+ const escape=value=>{const el=document.createElement("div");el.textContent=value;return el.innerHTML};
+ function run(raw,{initial=false}={}){const command=raw.trim().toLowerCase();if(!command)return;if(command==="clear"){output.innerHTML="";input.focus();return}if(command==="resume")window.open("resume.pdf","_blank","noopener");const response=command==="resume"?`<div class="response-title">Opening résumé <span class="muted">↗</span></div><p>If it did not open, <a href="resume.pdf" target="_blank">view it here</a>.</p>`:commands[command]||`<div class="response-title">Command not found: <span class="muted">${escape(command)}</span></div><p>Try “help” or choose a command from the index.</p>`;const block=document.createElement("div");block.className="output-block";block.innerHTML=`<div class="command-echo"><b>hasnae</b>@portfolio:~$ ${escape(command)}</div><div class="response">${response}</div>`;output.append(block);if(!initial){history.push(command);historyIndex=history.length}if(commands[command]||command==="resume")buttons.forEach(b=>b.classList.toggle("active",b.dataset.command===command));input.value="";input.focus();requestAnimationFrame(()=>body.scrollTo({top:body.scrollHeight,behavior:"smooth"}))}
+ const commandNames=[...Object.keys(commands),"resume","clear"];
+ const commonPrefix=values=>values.reduce((prefix,value)=>{while(!value.startsWith(prefix))prefix=prefix.slice(0,-1);return prefix},values[0]||"");
+ function completeCommand(){
+  const typed=input.value.trim().toLowerCase();
+  if(!typed)return;
+  const matches=commandNames.filter(command=>command.startsWith(typed));
+  if(matches.length===1){input.value=matches[0];input.setSelectionRange(input.value.length,input.value.length);return}
+  if(matches.length>1){
+   const shared=commonPrefix(matches);
+   if(shared.length>typed.length)input.value=shared;
+   else{const block=document.createElement("div");block.className="output-block";block.innerHTML=`<div class="response muted">${matches.join("&nbsp;&nbsp; ")}</div>`;output.append(block);requestAnimationFrame(()=>body.scrollTo({top:body.scrollHeight,behavior:"smooth"}))}
+  }
+ }
+ form.addEventListener("submit",e=>{e.preventDefault();run(input.value)});input.addEventListener("keydown",e=>{if(e.key==="Tab"){e.preventDefault();completeCommand();return}if(e.key==="ArrowUp"&&history.length){e.preventDefault();historyIndex=Math.max(0,historyIndex-1);input.value=history[historyIndex]||""}if(e.key==="ArrowDown"&&history.length){e.preventDefault();historyIndex=Math.min(history.length,historyIndex+1);input.value=history[historyIndex]||""}});buttons.forEach(b=>b.addEventListener("click",()=>run(b.dataset.command)));document.querySelector("#clear-button").addEventListener("click",()=>run("clear"));body.addEventListener("click",e=>{if(!e.target.closest("a,button"))input.focus()});document.querySelector("#current-time").textContent=new Intl.DateTimeFormat("en",{hour:"2-digit",minute:"2-digit",hour12:false}).format(new Date);document.querySelector("#year").textContent=new Date().getFullYear();input.focus();
 });
