@@ -4,6 +4,9 @@ An interactive, Linux-inspired web terminal built to present my cybersecurity, D
 
 The portfolio behaves like a small command-line interface: visitors can type commands, browse command history and use Tab completion to discover the available sections.
 
+To visit my webterminal portfolio, go to the link:   https://hsinaa.github.io/hsina-s-Web-Terminal-Portfolio/ . 
+
+
 ## Features
 
 - Minimal Linux terminal interface
@@ -45,41 +48,6 @@ hasnae@portfolio:~$ pro<Tab>
 hasnae@portfolio:~$ projects
 ```
 
-## Run locally
-
-Clone the repository:
-
-```bash
-git clone https://github.com/hsinaa/hsina-s-Web-Terminal-Portfolio.git
-cd hsina-s-Web-Terminal-Portfolio
-```
-
-You can open `index.html` directly in a browser, or serve the directory with a small local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit [http://localhost:8000](http://localhost:8000).
-
-## Project structure
-
-```text
-.
-├── index.html    # Terminal markup
-├── styles.css    # Linux terminal styling and responsive layout
-├── script.js     # Commands, history and Tab completion
-├── resume.pdf    # Downloadable résumé
-└── README.md
-```
-
-## Customization
-
-- Edit command responses in the `commands` object inside `script.js`.
-- Adjust terminal colors and dimensions through the variables at the top of `styles.css`.
-- Replace `resume.pdf` with an updated résumé while keeping the same filename.
-- Update the page title and welcome message in `index.html`.
-
 ## Built with
 
 - HTML5
@@ -93,7 +61,3 @@ Then visit [http://localhost:8000](http://localhost:8000).
 - [GitHub](https://github.com/hsinaa)
 - [LinkedIn](https://www.linkedin.com/in/hasnae-amansag-b7ba81214)
 - [Email](mailto:amansag.hasnae@gmail.com)
-
-## License
-
-This project is available for personal and educational use. Portfolio content and personal information remain the property of the author.
